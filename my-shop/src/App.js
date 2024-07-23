@@ -1,4 +1,5 @@
 import React from 'react';
+import {Route, Routes} from 'react-router-dom';
 import Product from './Components/Product';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
@@ -13,14 +14,18 @@ import './App.css';
 function App() {
   return (
     <div className = "apps">
-      <Product />
-      <Cart />
-      <Checkout />
       <Navbar />
-      <Reviews />
-      <ReviewsList />
-      <ReviewsForm />
-      <Productcard />
+
+      <Routes>
+
+        <Route path = "Productcard" element = {<Productcard />} />
+        <Route path = "Cart" element = {<Cart />} />
+        <Route path = "Product" element = {<Product />} />
+        <Route path = "Reviews" element = {<Reviews />} />
+        <Route path = "ReviewsList" element = {<ReviewsList />} />
+        <Route path = "ReviewsForm" element = {<ReviewsForm />} />
+        <Route path = "Checkout" element = {<Checkout />} />
+      </Routes>
 
       </div>
   );
